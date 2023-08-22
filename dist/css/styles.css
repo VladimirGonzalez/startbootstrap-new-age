@@ -1233,7 +1233,7 @@ progress {
 }
 @media (min-width: 992px) {
   .col-lg {
-    flex: 1 0 0%;
+    flex: 3 8 0%;
   }
   .row-cols-lg-auto > * {
     flex: 0 0 auto;
@@ -10934,10 +10934,35 @@ section {
   content: "";
   background-image: url("../assets/img/portrait_black.png");
 }
+.devicemac[data-device=Macbook][data-orientation=portrait][data-color=black] {
+  width: 500px;
+  height: 500px;
+  position: relative; /* Agregamos posición relativa para que los elementos internos se posicionen correctamente */
+  margin: 0;
+
+}
+
+.devicemac[data-device=Macbook][data-orientation=portrait][data-color=black] .screen {
+  position: absolute; /* Cambiamos a posición absoluta para ajustar elementos internos */
+  top: 10px; /* Ajusta este valor según la posición deseada */
+  left: 60px; /* Ajusta este valor según la posición deseada */
+  width: 380px; /* Ajusta este valor según el ancho deseado */
+  height: 250px; /* Ajusta este valor según la altura deseada */
+}
+
 .devicemac[data-device=Macbook][data-orientation=portrait][data-color=black]::after {
   content: "";
   background-image: url("../assets/img/macbook.png");
+  background-size: contain; /* Ajustamos el tamaño del fondo para que quepa en el contenedor */
+  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
+
 
 .device[data-device=iPhoneX][data-orientation=portrait][data-color=black] .button {
   display: none;
